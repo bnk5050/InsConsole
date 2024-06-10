@@ -6,6 +6,7 @@ using System.Transactions;
 
 Console.WriteLine("Hello, World!");
 
+//Consider abstracting loading into another class
 List<Person> people = new List<Person>();
 List<Visit> visits = new List<Visit>();
 List<InsPlan> plans = new List<InsPlan>();
@@ -79,7 +80,7 @@ void loadVisits()
 
 void loadPlans()
 {
-	plans = SqliteDataAccess.LoadPlan();
+	plans = SqliteDataAccess.LoadPlans();
 }
 void addPerson()
 {
@@ -103,5 +104,14 @@ void listVisits()
 void showSettings()
 {
     Console.WriteLine("Current Settings: \n");
+	Console.WriteLine("Insurance PLan");
+	plans.ForEach(plan =>
+	{
+		Console.WriteLine("Plan Id: {0}", plan.PlanId);
+		Console.WriteLine("Copay: {0}", plan.CoPay);
+
+	});
+    Console.WriteLine("\n Press any key to continue....");
+    Console.ReadKey();
 
 }

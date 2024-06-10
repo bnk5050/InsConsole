@@ -31,7 +31,7 @@ namespace InsConsole
             }
         }
 
-        public static List<InsPlan> LoadPlan()
+        public static List<InsPlan> LoadPlans()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
