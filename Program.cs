@@ -27,7 +27,7 @@ do
     Console.WriteLine("l. List everyone");
 	Console.WriteLine("v. List visits");
     Console.WriteLine("s. Settings");
-    Console.WriteLine("e Exit");
+    Console.WriteLine("e. Exit");
     Console.Write("\nEnter a selection: ");
     menuSelection = Console.ReadKey().KeyChar;
 	switch (menuSelection)
