@@ -16,6 +16,7 @@ loadPeople();
 loadVisits();
 
 
+//todo: migrate menu to own class / logic
 char menuSelection;
 
 do
@@ -45,9 +46,8 @@ do
             listEveryone();
 			break;
 		case 'e':
-            Console.WriteLine("\n");
-            listVisits();
-            break;
+            Environment.Exit(0);
+			break;
 		case 's':
 			Console.WriteLine("\n");
 			showSettings();
@@ -107,7 +107,7 @@ void showSettings()
 	Console.WriteLine("Insurance PLan");
 	plans.ForEach(plan =>
 	{
-		Console.WriteLine("Plan Id: {0}", plan.PlanId);
+		Console.WriteLine("Plan Name: {0}", plan.PlanName);
 		Console.WriteLine("Copay: {0}", plan.CoPay);
 
 	});
