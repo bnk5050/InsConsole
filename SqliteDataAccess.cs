@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using InsConsole.models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -30,6 +31,15 @@ namespace InsConsole
             }
         }
 
+        public static List<InsPlanModel> LoadPlan()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<InsPlanModel>("select * from InsPlan", new DynamicParameters());
+                return output.ToList();
+            }
+
+        }
         public static void SavePerson(PersonModel person)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))

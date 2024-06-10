@@ -1,11 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using InsConsole;
+using InsConsole.models;
 using System.ComponentModel.Design;
+using System.Transactions;
 
 Console.WriteLine("Hello, World!");
 
 List<PersonModel> people = new List<PersonModel>();
 List<VisitModel> visits = new List<VisitModel>();
+List<InsPlanModel> plans = new List<InsPlanModel>();
+//TODO: LOAD INSURANCE PLAN
+loadPlan();
 loadPeople();
 loadVisits();
 
@@ -15,32 +20,37 @@ char menuSelection;
 do
 {
     Console.WriteLine("Main Menu");
-    Console.WriteLine("1. Add Person");
-    Console.WriteLine("2. Remove Person");
-    Console.WriteLine("3. List everyone");
-	Console.WriteLine("5. List visits");
-    Console.WriteLine("4. Exit");
+    Console.WriteLine("a. Add Person");
+    Console.WriteLine("r. Remove Person");
+    Console.WriteLine("l. List everyone");
+	Console.WriteLine("v. List visits");
+    Console.WriteLine("s. Settings");
+    Console.WriteLine("e Exit");
     Console.Write("\nEnter a selection: ");
     menuSelection = Console.ReadKey().KeyChar;
 	switch (menuSelection)
 	{
-		case '1':
+		case 'a':
 			Console.WriteLine("\nyou selected 1");
 			Console.WriteLine("Adding a person");
 			addPerson();
 			break;
-		case '2':
+		case 'r':
             Console.WriteLine("\nYou selected 2");
             Console.WriteLine("Removing a person");
 			break;
-		case '3':
+		case 'l':
             Console.WriteLine("\n");
             listEveryone();
 			break;
-		case '5':
+		case 'e':
             Console.WriteLine("\n");
             listVisits();
             break;
+		case 's':
+			Console.WriteLine("\n");
+			showSettings();
+			break;
         default:
 			Console.WriteLine("\nTry again!");
 			break;
@@ -66,6 +76,11 @@ void loadVisits()
 {
 	visits = SqliteDataAccess.LoadVisits();
 }
+
+void loadPlan()
+{
+	plans = SqliteDataAccess.LoadPlan();
+}
 void addPerson()
 {
 	PersonModel person = new PersonModel();
@@ -83,4 +98,10 @@ void listVisits()
     visits.ForEach(visit => Console.WriteLine(visit.Date));
     Console.WriteLine("\n Press any key to continue....");
     Console.ReadKey();
+}
+
+void showSettings()
+{
+    Console.WriteLine("Current Settings: \n");
+
 }
