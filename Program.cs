@@ -15,10 +15,9 @@ loadPlans();
 loadPeople();
 loadVisits();
 
-
+#region Menu
 //todo: migrate menu to own class / logic
 char menuSelection;
-
 do
 {
     Console.WriteLine("Main Menu");
@@ -59,7 +58,7 @@ do
 	//Console.Clear();
 
 } while (menuSelection!='4');
-
+#endregion
 void listEveryone()
 {
 	people.ForEach(person => Console.WriteLine(person.FullName));
