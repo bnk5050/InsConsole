@@ -51,6 +51,10 @@ do
 			Console.WriteLine("\n");
 			showSettings();
 			break;
+		case 'v':
+            Console.WriteLine("\n");
+			listVisits();
+			break;
         default:
 			Console.WriteLine("\nTry again!");
 			break;
