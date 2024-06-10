@@ -10,7 +10,7 @@ List<Person> people = new List<Person>();
 List<Visit> visits = new List<Visit>();
 List<InsPlan> plans = new List<InsPlan>();
 //TODO: LOAD INSURANCE PLAN
-loadPlan();
+loadPlans();
 loadPeople();
 loadVisits();
 
@@ -77,7 +77,7 @@ void loadVisits()
 	visits = SqliteDataAccess.LoadVisits();
 }
 
-void loadPlan()
+void loadPlans()
 {
 	plans = SqliteDataAccess.LoadPlan();
 }

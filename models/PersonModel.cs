@@ -12,12 +12,6 @@ namespace InsConsole.models
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
 
-        //public Person(long PersonId_, string FirstName_, string? LastName_)
-        //{
-        //    this.PersonId = PersonId_;
-        //    this.FirstName = FirstName_;
-        //    this.LastName = LastName_;
-        //}
         public string FullName
         {
             get
