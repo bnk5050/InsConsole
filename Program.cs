@@ -9,7 +9,7 @@ Console.WriteLine("Hello, World!");
 List<Person> people = new List<Person>();
 List<Visit> visits = new List<Visit>();
 List<InsPlan> plans = new List<InsPlan>();
-//TODO: LOAD INSURANCE PLAN
+
 loadPlans();
 loadPeople();
 loadVisits();
