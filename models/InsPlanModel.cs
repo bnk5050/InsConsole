@@ -9,6 +9,7 @@ namespace InsConsole.models
     public class InsPlan
     {
         public long PlanId { get; set; }
+        public string? PlanName { get; set; }
         public decimal IndividualDeductIn { get; set; }
         public decimal FamilyDeductIn { get; set; }
         public decimal IndividualDeductOut { get; set; }
