@@ -6,9 +6,9 @@ using System.Transactions;
 
 Console.WriteLine("Hello, World!");
 
-List<PersonModel> people = new List<PersonModel>();
-List<VisitModel> visits = new List<VisitModel>();
-List<InsPlanModel> plans = new List<InsPlanModel>();
+List<Person> people = new List<Person>();
+List<Visit> visits = new List<Visit>();
+List<InsPlan> plans = new List<InsPlan>();
 //TODO: LOAD INSURANCE PLAN
 loadPlan();
 loadPeople();
@@ -83,7 +83,7 @@ void loadPlan()
 }
 void addPerson()
 {
-	PersonModel person = new PersonModel();
+	Person person = new Person();
 	Console.WriteLine("Enter First Name: ");
 	person.FirstName = Console.ReadLine();
 	Console.WriteLine("Enter Last Name: ");

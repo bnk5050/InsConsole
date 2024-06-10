@@ -13,7 +13,7 @@ namespace InsConsole
 {
     public class SqliteDataAccess
     {
-        public static List<PersonModel> LoadPeople()
+        public static List<Person> LoadPeople()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -22,25 +22,25 @@ namespace InsConsole
             }
         }
 
-        public static List<VisitModel> LoadVisits()
+        public static List<Visit> LoadVisits()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<VisitModel>("select * from Visit", new DynamicParameters());
+                var output = cnn.Query<Visit>("select * from Visit", new DynamicParameters());
                 return output.ToList();
             }
         }
 
-        public static List<InsPlanModel> LoadPlan()
+        public static List<InsPlan> LoadPlan()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<InsPlanModel>("select * from InsPlan", new DynamicParameters());
+                var output = cnn.Query<InsPlan>("select * from InsPlan", new DynamicParameters());
                 return output.ToList();
             }
 
         }
-        public static void SavePerson(PersonModel person)
+        public static void SavePerson(Person person)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
